@@ -68,10 +68,10 @@ def object_info_setup(data, arenas):
     NOTE: This is a smaller version of the program used in the sorting template"""
     A_Height, A_Width, B_Height, B_Width= [], [], [], []
     for a in range(len(arenas)):
-        A_Height.append(int(data[1+2*a][2]))
-        A_Width.append(int(data[1+2*a][1]))
-        B_Height.append(int(data[2+2*a][2]))
-        B_Width.append(int(data[2+2*a][1]))
+        A_Height.append(int(round(float(data[1+2*a][2]))))
+        A_Width.append(int(round(float(data[1+2*a][1]))))
+        B_Height.append(int(round(float(data[2+2*a][2]))))
+        B_Width.append(int(round(float(data[2+2*a][1]))))
     return(A_Height, A_Width, B_Height, B_Width)
 
 def arena_info_setup(data, arena):
@@ -80,14 +80,14 @@ def arena_info_setup(data, arena):
     top, bottom, left, right = [], [], [], []
     arena_len=len(arena)
     for a in range(arena_len):
-        top.append(min(int(data[1+(arena_len+a)*2][2]), int(data[2+(arena_len+a)*2][2])))
-        bottom.append(max(int(data[1+(arena_len+a)*2][2]), int(data[2+(arena_len+a)*2][2])))
-        left.append(min(int(data[1+(arena_len+a)*2][1]), int(data[2+(arena_len+a)*2][1])))
-        right.append(max(int(data[1+(arena_len+a)*2][1]), int(data[2+(arena_len+a)*2][1])))
+        top.append(min(int(round(float(data[1+(arena_len+a)*2][2]))), int(round(float(data[2+(arena_len+a)*2][2])))))
+        bottom.append(max(int(round(float(data[1+(arena_len+a)*2][2]))), int(round(float(data[2+(arena_len+a)*2][2])))))
+        left.append(min(int(round(float(data[1+(arena_len+a)*2][1]))), int(round(float(data[2+(arena_len+a)*2][1])))))
+        right.append(max(int(round(float(data[1+(arena_len+a)*2][1]))), int(round(float(data[2+(arena_len+a)*2][1])))))
     return(top, bottom, left, right)    
 
 def image_processing(img):
-    """Accepts an image, then opens it and processes it to highlight mouse
+    """Accepts an image, then opens it and processes it to highlight 
     (gaussian filter and thresholding). Returns processed image"""
     imgone=img[:,:,2]
     imgf=ndimage.gaussian_filter(imgone,1)
@@ -114,7 +114,7 @@ def turn_it_blue(image, blue):
 
 
 if __name__=="__main__":
-    directory=input("What is the name of the directory your files are in? Make sure to put r in front and then surround the directory with quotes. Example: r'E:\081814 Mouse Behavior 1\072714 ORM\ORM testing'. ")
+    directory=input("What is the name of the directory your files are in? Make sure to put r in front and then surround the directory with quotes. ")
     png_directory=join(directory, 'PNGs')
     prep_directory=join(directory, 'Prep data')
     criteria_file=join(prep_directory, 'criteria.csv')

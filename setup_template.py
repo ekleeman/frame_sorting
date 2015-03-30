@@ -114,7 +114,7 @@ def turn_it_blue(image, blue):
 
 
 if __name__=="__main__":
-    directory=r'E:\081814 Mouse Behavior 1\072714 ORM\ORM testing'
+    directory=input("What is the name of the directory your files are in? Make sure to put r in front and then surround the directory with quotes. Example: r'E:\081814 Mouse Behavior 1\072714 ORM\ORM testing'. ")
     png_directory=join(directory, 'PNGs')
     prep_directory=join(directory, 'Prep data')
     criteria_file=join(prep_directory, 'criteria.csv')

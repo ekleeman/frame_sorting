@@ -110,7 +110,7 @@ def object_info_setup(data, arenas):
         B_Height.append(int(data[2+2*a][2]))
         B_Width.append(int(data[2+2*a][1]))
         startFrame.append(int(data[1+a][4]))
-        endFrame.append(int(data[1+a][4])+int(data[1][5])) #start frame+total number of frames
+        endFrame.append(int(data[1+a][5])) #start frame+total number of frames
     return(A_Height, A_Width, B_Height, B_Width, startFrame, endFrame)
 
 def arena_info_setup(data, arena):

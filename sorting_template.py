@@ -200,7 +200,7 @@ def crop_and_save(tester_A, tester_B, tester_Both, image, cropTop, cropBottom, c
     return()
 
 if __name__=="__main__":
-    directory=r'E:\081814 Mouse Behavior 1\072714 ORM\ORM testing'
+    directory=input("What directory are your files in? Make sure to preface with r and put the directory in quotation marks. ")
     png_directory=join(directory, 'PNGs')
     prep_directory=join(directory, 'Prep data')
     sorted_directory=join(directory, 'Sorted images')

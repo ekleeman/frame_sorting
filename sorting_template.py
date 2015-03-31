@@ -105,10 +105,10 @@ def object_info_setup(data, arenas):
     Returns lists for A and B heights and widths, and starts and ends for each arena in order"""
     A_Height, A_Width, B_Height, B_Width, startFrame, endFrame = [], [], [], [], [], []
     for a in range(len(arenas)):
-        A_Height.append(int(data[1+2*a][2]))
-        A_Width.append(int(data[1+2*a][1]))
-        B_Height.append(int(data[2+2*a][2]))
-        B_Width.append(int(data[2+2*a][1]))
+        A_Height.append(int(round(float(data[1+2*a][2]))))
+        A_Width.append(int(round(float(data[1+2*a][1]))))
+        B_Height.append(int(round(float(data[2+2*a][2]))))
+        B_Width.append(int(round(float(data[2+2*a][1]))))
         startFrame.append(int(data[1+a][4]))
         endFrame.append(int(data[1+a][5])) #start frame+total number of frames
     return(A_Height, A_Width, B_Height, B_Width, startFrame, endFrame)
@@ -119,10 +119,10 @@ def arena_info_setup(data, arena):
     top, bottom, left, right = [], [], [], []
     arena_len=len(arena)
     for a in range(arena_len):
-        top.append(min(int(data[1+(arena_len+a)*2][2]), int(data[2+(arena_len+a)*2][2])))
-        bottom.append(max(int(data[1+(arena_len+a)*2][2]), int(data[2+(arena_len+a)*2][2])))
-        left.append(min(int(data[1+(arena_len+a)*2][1]), int(data[2+(arena_len+a)*2][1])))
-        right.append(max(int(data[1+(arena_len+a)*2][1]), int(data[2+(arena_len+a)*2][1])))
+        top.append(min(int(round(float(data[1+(arena_len+a)*2][2]))), int(round(float(data[2+(arena_len+a)*2][2])))))
+        bottom.append(max(int(round(float(data[1+(arena_len+a)*2][2]))), int(round(float(data[2+(arena_len+a)*2][2])))))
+        left.append(min(int(round(float(data[1+(arena_len+a)*2][1]))), int(round(float(data[2+(arena_len+a)*2][1])))))
+        right.append(max(int(round(float(data[1+(arena_len+a)*2][1]))), int(round(float(data[2+(arena_len+a)*2][1])))))
     return(top, bottom, left, right)    
 
 def image_processing(img):

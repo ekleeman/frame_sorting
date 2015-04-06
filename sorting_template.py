@@ -240,7 +240,7 @@ if __name__=="__main__":
                 
                 fixed_image=image_processing(img)
                 if counter-min_counter==250:            
-                    scipy.misc.imsave(r'E:\081814 Mouse Behavior 1\072714 ORM\ORM testing\Prep data\testingthresh.png', fixed_image)
+                    scipy.misc.imsave(join(png_directory, 'testingthresh.png'), fixed_image)
                 for ar_index, ar_name in enumerate(arenas):
                     print counter-min_counter, ar_name 
                     #debugging.write('counter: '+str(counter-min_counter)+' '+ar_name+'\n')

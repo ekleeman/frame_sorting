@@ -118,7 +118,7 @@ def turn_it_blue(image, blue):
 if __name__=="__main__":
     directory=input("What is the name of the directory your files are in? Make sure to put r in front and then surround the directory with quotes. ")
     png_directory=join(directory, 'PNGs')
-    prep_directory=join(directory, 'Prep data')
+    prep_directory=join(directory, 'Prep_data')
     criteria_file=join(prep_directory, 'criteria.csv')
     
     which_folder=input("Which folder would you like to test? Must match exactly, and be in quotes. ")
